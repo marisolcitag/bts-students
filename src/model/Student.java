@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Student implements Comparable<Student>{
 	private int code;
 	private String name;
@@ -54,10 +56,33 @@ public class Student implements Comparable<Student>{
 		return value;
 	}
 	
+	public void inorder(ArrayList<Student> s) {
+		if(left != null) {
+			left.inorder(s);
+		}
+		s.add(this);
+		if(right != null) {
+			right.inorder(s);
+		}
+	}
 	
+	public void preorder(ArrayList<Student> s) {
+		s.add(this);
+		if(left != null) {
+			left.preorder(s);
+		}
+		if(right != null) {
+			right.preorder(s);
+		}
+	}
 	
-	
-	
-	
-
+	public void postorder(ArrayList<Student> s) {
+		if(left != null) {
+			left.postorder(s);
+		}
+		if(right != null) {
+			right.postorder(s);
+		}
+		s.add(this);
+	}
 }

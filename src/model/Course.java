@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Course {
 	
 	
@@ -34,7 +37,6 @@ public class Course {
 					addStudent(current.getRight(), newStudent);
 				}
 			}
-		
 	}
 	
 	public Student searchStudent(int c) {
@@ -51,6 +53,30 @@ public class Course {
 		}else {
 			return (current.getRight() == null)? null : search(current.getRight(), toSearch);			
 		}
+	}
+	
+	public List<Student> inorder() {
+		ArrayList<Student> s = new ArrayList<Student>();
+		if(root != null) {
+			root.inorder(s);
+		}
+		return s;
+	}
+	
+	public List<Student> preorder() {
+		ArrayList<Student> s = new ArrayList<Student>();
+		if(root != null) {
+			root.preorder(s);
+		}
+		return s;
+	}
+	
+	public List<Student> postorder() {
+		ArrayList<Student> s = new ArrayList<Student>();
+		if(root != null) {
+			root.postorder(s);
+		}
+		return s;
 	}
 
 }
