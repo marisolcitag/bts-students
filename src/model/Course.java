@@ -54,7 +54,17 @@ public class Course {
 			return (current.getRight() == null)? null : search(current.getRight(), toSearch);			
 		}
 	}
+
 	
+	
+	public Student getRoot() {
+		return root;
+	}
+
+	public void setRoot(Student root) {
+		this.root = root;
+	}
+
 	public List<Student> inorder() {
 		ArrayList<Student> s = new ArrayList<Student>();
 		if(root != null) {
